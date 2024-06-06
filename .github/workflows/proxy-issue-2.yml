@@ -1,0 +1,13 @@
+name: Proxy issue to loqusion/vulnerable-repo (no env)
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  proxy-issue-no-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create proxy issue
+        run: |
+          GH_TOKEN="${{ secrets.VULNERABLE_REPO_PAT }}" gh issue --repo loqusion/vulnerable-repo create --title "${{ github.event.issue.title }}" --body "${{ github.event.issue.body }}"
