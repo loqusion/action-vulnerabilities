@@ -1,0 +1,15 @@
+name: Secret
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  proxy-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create proxy issue
+        run: |
+          gh issue --repo loqusion/vulnerable-repo create --title "${{ github.event.issue.title }}" --body "${{ github.event.issue.body }}"
+        env:
+          GH_TOKEN: ${{ secrets.VULNERABLE_REPO_PAT }}
