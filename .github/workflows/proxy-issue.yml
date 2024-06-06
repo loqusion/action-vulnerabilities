@@ -1,4 +1,4 @@
-name: Secret
+name: Proxy issue to loqusion/vulnerable-repo
 
 on:
   issues:
