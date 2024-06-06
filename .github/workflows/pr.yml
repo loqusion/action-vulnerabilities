@@ -1,0 +1,13 @@
+name: Do something with a PR
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: PR
+        run: |
+          echo "${{ github.event.pull_request.title }}"
