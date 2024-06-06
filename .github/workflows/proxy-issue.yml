@@ -1,9 +1,8 @@
 name: Proxy issue to loqusion/vulnerable-repo
 
 on:
-  workflow_dispatch:
-  # issues:
-  #   types: [opened]
+  issues:
+    types: [opened]
 
 jobs:
   proxy-issue:
